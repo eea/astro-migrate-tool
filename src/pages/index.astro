@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Revalidate from "../components/Revalidate"
+import fetch from "fetch-cache"
+
+export const prerender = false
+
+console.log('====> Homepage')
+
+const response = await fetch('http://localhost:3000/api/articles', {
+  headers: {
+    'x-fetch-tags': 'article,homepage'
+  }
+})
+
+const result = await response.text()
+
+console.log(response.headers.get('x-fetch-cache'))
+
+// return Astro.redirect("/dashboard", 301)
+---
+
+<Layout>
+  <h1>Homepage</h1>
+  <Revalidate tags={['article']} client:load />
+  <read-content data-content={result} />
+</Layout>
+
+<script>
+  class ReadContent extends HTMLElement {
+    constructor() {
+      super();
+      const content = JSON.parse(this.dataset.content);
+      console.log('HERE', content)
+    }
+  }
+
+  customElements.define('read-content', ReadContent);
+</script>

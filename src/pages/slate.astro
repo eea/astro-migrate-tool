@@ -1,0 +1,12 @@
+---
+import SlateParser from "../components/SlateParser"
+import Layout from "../layouts/Layout.astro"
+
+import "jsoneditor/dist/jsoneditor.min.css";
+
+export const prerender = false
+---
+
+<Layout>
+	<SlateParser client:load />
+</Layout>

@@ -1,0 +1,30 @@
+{
+  "name": "astro-fixer",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --port 3000",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "develop:npx": "npx --yes -p mrs-developer missdev --output=../workspaces --no-config"
+  },
+  "dependencies": {
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/solid-js": "^4.2.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.8.6",
+    "classnames": "^2.5.1",
+    "jsoneditor": "^10.0.3",
+    "node-html-parser": "^6.1.13",
+    "slate": "^0.103.0",
+    "solid-js": "^1.8.17",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@types/object-hash": "^3.0.6",
+    "solid-devtools": "^0.30.1",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.1.3"
+}

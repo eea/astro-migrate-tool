@@ -1,0 +1,26 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+import Link from '../components/Link.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro fixer</title>
+    <ViewTransitions />
+	</head>
+	<body class="bg-gray-800 text-white">
+    <nav class="flex gap-x-6 p-6">
+      <Link href="/export-content">Export content</Link>
+      <Link href="/dashboard">Dashboard</Link>
+      <!-- <Link href="/slate">Parse slate</Link> -->
+    </nav>
+    <main class="p-4">
+      <slot />
+    </main>
+	</body>
+</html>
